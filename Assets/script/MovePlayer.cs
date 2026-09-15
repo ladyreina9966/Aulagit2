@@ -7,7 +7,9 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] Vector2 _posicao;
 
-    [SerializeField] Rigidbody2D _rig2d;
+    Rigidbody2D _rig2d;
+
+    [SerializeField] bool _checkGround;
 
     void Start()
     {
@@ -20,7 +22,10 @@ public class MovePlayer : MonoBehaviour
     }
     public void SetJump(InputAction.CallbackContext value)
     {
-        _rig2d.AddForceY(100);
+        if (_checkGround == true)
+        {
+            _rig2d.AddForceY(100);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -34,5 +39,21 @@ public class MovePlayer : MonoBehaviour
             Debug.Log("ground");
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("groud"))
+        {
+            Debug.Log("tocou no chão");
+            _checkGround = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("groud"))
+        {
+            Debug.Log("saio do chão");
+            _checkGround = false;
+        }
     }
 }
