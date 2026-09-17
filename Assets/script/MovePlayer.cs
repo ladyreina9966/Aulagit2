@@ -32,14 +32,7 @@ public class MovePlayer : MonoBehaviour
     {
         _rig2d.linearVelocityX = _posicao.x* _velocidadeX;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            Debug.Log("ground");
-        }
 
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("groud"))
