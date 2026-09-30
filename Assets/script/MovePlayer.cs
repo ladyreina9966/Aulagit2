@@ -10,6 +10,7 @@ public class MovePlayer : MonoBehaviour
     Rigidbody2D _rig2d;
 
     [SerializeField] bool _checkGround;
+    bool _isface;
 
     void Start()
     {
@@ -30,9 +31,16 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rig2d.linearVelocityX = _posicao.x* _velocidadeX;
+        _rig2d.linearVelocityX = _posicao.x * _velocidadeX;
+        if (_posicao.x < 0 && _isface == false)
+        {
+            Flip();
+        }
+        else if (_posicao.x > 0 && _isface == true)
+        {
+            Flip();
+        }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("groud"))
@@ -48,5 +56,13 @@ public class MovePlayer : MonoBehaviour
             Debug.Log("saio do chão");
             _checkGround = false;
         }
+
+    }
+    private void Flip()
+    {
+        _isface = !_isface;
+        Vector2 thescale = transform.localScale;
+        thescale.x *= -1;
+        transform.localScale = thescale;
     }
 }
