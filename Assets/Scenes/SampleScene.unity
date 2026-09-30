@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 64298636}
   - component: {fileID: 64298637}
   - component: {fileID: 64298638}
+  - component: {fileID: 64298639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -184,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1920370909, guid: 37c58a600d59f82409780c49e5e7739e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,8 +205,8 @@ Transform:
   m_GameObject: {fileID: 64298632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0939, y: 0.2528, z: 0}
-  m_LocalScale: {x: 1.1878766, y: 1.2528, z: 1}
+  m_LocalPosition: {x: 1.16, y: 0.13, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1661833920}
@@ -246,7 +247,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.26, y: 0.63}
   m_Direction: 0
 --- !u!50 &64298636
 Rigidbody2D:
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocidadeX: 5
   _posicao: {x: 0, y: 0}
-  _rig2d: {fileID: 64298636}
+  _checkGround: 0
 --- !u!114 &64298638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &64298639
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64298632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5356010cb160e5d438a1ad26c816e42e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &130828796
 GameObject:
   m_ObjectHideFlags: 0
