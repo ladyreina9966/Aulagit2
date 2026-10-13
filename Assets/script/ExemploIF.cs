@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class ExemploIF : MonoBehaviour
@@ -8,48 +7,47 @@ public class ExemploIF : MonoBehaviour
 
     public int _vida;
 
-    void Checarvida()
+    void ChecarVida()
     {
-        if( vida == 0 )
+        if (_vida == 0)
         {
-            Debug.Log("MORTO");
+            Debug.Log("Morto");
         }
-        else if( pontos == 1 )
+        else if (_vida == 1)
         {
             Debug.Log("vivo");
             Debug.Log("lento");
             Debug.Log("sangrando");
         }
-        else if (pontos >= 2)
+        else if (_vida >= 2)
         {
             Debug.Log("vivo");
-            Debug.Log("normal");
+            Debug.Log("velocidade normal");
+           
         }
     }
+
     void Start()
     {
+        if (pontos >= 18)
+        {
+            Debug.Log("Maior ou igual");
+        }
+
         if (pontos == 0)
         {
             Debug.Log("gameOver");
         }
+
         if (vida == 100)
         {
             Debug.Log("player está vivo");
         }
+
         if (vida != 0)
         {
-            Debug.Log("vida diferente de 0");
+            Debug.Log("Vida difente de 0");
         }
-        if (pontos >= 18)
-        {
-            Debug.Log("maior ou igual");
-        }
-        if (vida > 100)
-        {
-            Debug.Log("pontuação alta");
-        }
-
-
     }
 
     // Update is called once per frame
