@@ -12,6 +12,10 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] bool _checkGround;
 
+    [SerializeField] Animator _anim;
+
+    [SerializeField] float _speedAnim;
+
     bool _isface;
 
 
@@ -37,6 +41,9 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         _rig2d.linearVelocityX = _posicao.x* _velocidadeX;
+
+        _speedAnim = Mathf.Abs(_rig2d.linearVelocityX);
+
         if(_posicao.x < 0 && _isface == false)
         {
             Flip();
