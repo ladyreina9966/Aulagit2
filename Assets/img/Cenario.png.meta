@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 314c7284047f1e24088c248e799220db
+guid: f04946a3af921c04e8ca07daa1a40421
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -472,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cenario_0: 8381738966649945292
+      Cenario_1: -3126919781661357908
+      Cenario_10: 4411381786357335498
+      Cenario_11: -1958389839451325408
+      Cenario_12: -6171555184681452622
+      Cenario_13: 4972364677102985763
+      Cenario_2: -7826874688380642458
+      Cenario_3: 3262820369640375084
+      Cenario_4: -7887317079958560645
+      Cenario_5: 885139062610644897
+      Cenario_6: -1078769899202104264
+      Cenario_7: 3154270270530904797
+      Cenario_8: 5934934566355273376
+      Cenario_9: -2330853216409231852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

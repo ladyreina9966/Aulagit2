@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,12 +40,19 @@ public class MovePlayer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
+
         _rig2d.linearVelocityX = _posicao.x* _velocidadeX;
+                
 
-        _speedAnim = Mathf.Abs(_rig2d.linearVelocityX);
+        _speedAnim = MathF.Abs(_rig2d.linearVelocityX);
 
-        if(_posicao.x < 0 && _isface == false)
+        _anim.SetFloat("speed", _speedAnim);
+        _anim.SetFloat("pulo", _rig2d.linearVelocityY);
+        _anim.SetBool("ground", _checkGround);
+
+
+        if (_posicao.x < 0 && _isface == false)
         {
             Flip();
         }
