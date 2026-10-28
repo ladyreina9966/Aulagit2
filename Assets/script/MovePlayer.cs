@@ -17,6 +17,8 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] float _speedAnim;
 
+    [SerializeField] float _JumpForce;
+   
     bool _isface;
 
 
@@ -34,7 +36,9 @@ public class MovePlayer : MonoBehaviour
     {
         if( _checkGround==true)
         {
-            _rig2d.AddForceY(100);
+            _checkGround = false;
+            _rig2d.linearVelocityY = 0;
+            _rig2d.AddForceY(10 * _JumpForce);
         }           
     }
 
