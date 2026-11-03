@@ -17,8 +17,8 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] float _speedAnim;
 
-    [SerializeField] float _JumpForce;
-   
+    [SerializeField] float _jumpForce;
+
     bool _isface;
 
 
@@ -37,8 +37,8 @@ public class MovePlayer : MonoBehaviour
         if( _checkGround==true)
         {
             _checkGround = false;
-            _rig2d.linearVelocityY = 0;
-            _rig2d.AddForceY(10 * _JumpForce);
+           _rig2d.linearVelocityY = 0;
+           _rig2d.AddForceY(10 * _jumpForce);
         }           
     }
 
@@ -70,9 +70,18 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("tocou np chão");
+           // Debug.Log("tocou no chão");
             _checkGround = true;
         }
+    }
+
+
+    public void JumpInimigo()
+    {
+        _checkGround = false;
+        _rig2d.linearVelocityY = 0;
+        _rig2d.AddForceY(10 * 20);
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

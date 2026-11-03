@@ -1,8 +1,12 @@
 using UnityEngine;
 
-public class inimigocontrol : MonoBehaviour
+public class InimigoControl : MonoBehaviour
 {
     [SerializeField] BoxCollider2D _box;
+    [SerializeField] bool morteCabeca;
+    [SerializeField] GameObject _partMorte;
+
+    
     void Start()
     {
         
@@ -18,9 +22,12 @@ public class inimigocontrol : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _box.enabled = false;
-            Debug.Log("Tocou no Player");
-            
+            if (morteCabeca == true)
+            {
+                collision.GetComponent<MovePlayer>().JumpInimigo();
+                _partMorte.SetActive(true);
+            }
+            //Debug.Log("Tocou no Player");
         }
-        
     }
 }
