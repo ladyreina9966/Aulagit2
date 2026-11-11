@@ -1,5 +1,4 @@
 {
-    "version": 1,
     "name": "movimento",
     "maps": [
         {
@@ -19,6 +18,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "e266053e-43e2-4018-ad04-de20315b3a7d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "atack",
+                    "type": "Button",
+                    "id": "3084c6fc-56a3-4b01-bb79-f5f7f2b697c5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -89,6 +97,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1832d4b9-e28d-4f21-a22a-112804c5693a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "atack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

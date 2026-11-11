@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class MovePlayer : MonoBehaviour
 {
 
-    [SerializeField] float _velocidadeX;   
+    [SerializeField] float _velocidadeX;
 
     [SerializeField] Vector2 _posicao;
 
@@ -24,8 +24,8 @@ public class MovePlayer : MonoBehaviour
 
     void Start()
     {
-        _rig2d= GetComponent<Rigidbody2D>();
-        
+        _rig2d = GetComponent<Rigidbody2D>();
+
     }
 
     public void SetMove(InputAction.CallbackContext value)
@@ -34,20 +34,20 @@ public class MovePlayer : MonoBehaviour
     }
     public void SetJump(InputAction.CallbackContext value)
     {
-        if( _checkGround==true)
+        if (_checkGround == true)
         {
             _checkGround = false;
-           _rig2d.linearVelocityY = 0;
-           _rig2d.AddForceY(10 * _jumpForce);
-        }           
+            _rig2d.linearVelocityY = 0;
+            _rig2d.AddForceY(10 * _jumpForce);
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
 
-        _rig2d.linearVelocityX = _posicao.x* _velocidadeX;
-                
+        _rig2d.linearVelocityX = _posicao.x * _velocidadeX;
+
 
         _speedAnim = MathF.Abs(_rig2d.linearVelocityX);
 
@@ -70,7 +70,7 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-           // Debug.Log("tocou no chão");
+            // Debug.Log("tocou no chão");
             _checkGround = true;
         }
     }
@@ -92,14 +92,16 @@ public class MovePlayer : MonoBehaviour
             _checkGround = false;
         }
     }
-    
+
     private void Flip()
     {
         _isface = !_isface;
-        Vector2 theScale =transform.localScale;
+        Vector2 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-
+    public void SetAtack(InputAction.CallbackContext value)
+    {
+        Debug.Log("Ataque");
+    }
 }
